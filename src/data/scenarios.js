@@ -45,7 +45,7 @@ export const scenarios = [
     {
         id: 6,
         type: 'multi-stage',
-        images: ['/images/human-verification.png', '/images/mshta-run.png'],
+        images: ['./images/human-verification.png', './images/mshta-run.png'],
         isThreat: true,
         reason: 'COMPLEX ATTACK: The popup tricks you into copying a malicious command (Pastejacking), which is then executed via the Run dialog (Mshta).',
     },
