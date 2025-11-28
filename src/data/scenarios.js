@@ -42,7 +42,7 @@ export const scenarios = [
         isThreat: false,
         reason: 'Internal email from a standard department address with relevant context.',
     },
-    {
+    /*{
         id: 6,
         type: 'multi-stage',
         images: [
@@ -51,6 +51,15 @@ export const scenarios = [
         ],
         isThreat: true,
         reason: 'COMPLEX ATTACK: The popup tricks you into copying a malicious command (Pastejacking), which is then executed via the Run dialog (Mshta).',
+    },*/
+    {
+        id: 6,
+        type: 'email',
+        sender: 'security@mícrosoft.com',
+        subject: 'Password Expired!',
+        body: 'Your password has expired. Update it now to avoid losing access.',
+        isThreat: true,
+        reason: 'Domain spoofing: huruf “í” pada microsoft.com menggunakan karakter Unicode.',
     },
     {
         id: 7,
@@ -251,5 +260,47 @@ export const scenarios = [
         body: 'Your payment method failed. Update it here to avoid suspension: http://netflix-billing.com',
         isThreat: true,
         reason: 'Netflix uses @netflix.com for emails, not texts. Domain netflix-billing.com is not official.',
+    },
+    {
+        id: 31,
+        type: 'sms',
+        sender: '+62 812-9900-5520',
+        body: 'Selamat! Anda memenangkan undian Tokopedia. Klik: http://t0kopedia-win.com',
+        isThreat: true,
+        reason: 'Fake brand domain + metode phishing melalui SMS.',
+    },
+    {
+        id: 32,
+        type: 'email',
+        sender: 'no-reply@google.com',
+        subject: 'New Login Detected',
+        body: 'Was this you? Check your account security: https://accounts.google.com',
+        isThreat: false,
+        reason: 'Email resmi dengan domain benar dan konteks sesuai.',
+    },
+    {
+        id: 32,
+        type: 'popup',
+        sender: 'SYSTEM ALERT',
+        body: 'Your device is infected! Download antivirus now!',
+        isThreat: true,
+        reason: 'Fake system alert yang memaksa user klik malware.',
+    },
+    {
+        id: 33,
+        type: 'website',
+        sender: 'http://bankbri.id-verif.net',
+        body: 'Masukkan data ATM Anda untuk verifikasi akun.',
+        isThreat: true,
+        reason: 'Phishing site menggunakan domain mencurigakan bukan resmi bank.',
+    },
+    {
+        id: 34,
+        type: 'email',
+        sender: 'hr@employee-company.com',
+        subject: 'Annual Leave Approved',
+        body: 'Your leave request is approved. No action needed.',
+        isThreat: false,
+        reason: 'Email internal tanpa permintaan data atau link mencurigakan.',
     }
 ];
