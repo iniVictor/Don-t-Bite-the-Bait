@@ -1,6 +1,3 @@
-import humanVerificationImg from '../assets/images/human-verification.png';
-import mshtaRunImg from '../assets/images/mshta-run.png';
-
 export const scenarios = [
     {
         id: 1,
@@ -48,7 +45,10 @@ export const scenarios = [
     {
         id: 6,
         type: 'multi-stage',
-        images: [humanVerificationImg, mshtaRunImg],
+        images: [
+            new URL('../assets/images/human-verification.png', import.meta.url).href,
+            new URL('../assets/images/mshta-run.png', import.meta.url).href
+        ],
         isThreat: true,
         reason: 'COMPLEX ATTACK: The popup tricks you into copying a malicious command (Pastejacking), which is then executed via the Run dialog (Mshta).',
     },
